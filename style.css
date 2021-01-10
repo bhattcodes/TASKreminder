@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Rhodium+Libre&display=swap');
+
+.container{
+    position: absolute;
+    background-image: url("images/yellowbackground.png") ;
+    width: 550px;
+    height: 300px;
+    background-size: cover;
+}
+
+.title1{
+    position: absolute;
+    top:0px;
+    right:20px;
+    font-size:45px;
+    font-family: 'Rhodium Libre', serif;
+
+}
+
+.title2{
+    position: absolute;
+    top:44px;
+    right:20px;
+    font-size:40px;
+    font-family: 'Rhodium Libre', serif;
+
+}
+
+.inputtime{
+    position: absolute;
+    top:100px;
+    right:195px;
+    font-size:40px;
+}
+
+#inputtext{
+    position: absolute;
+    top:121px;
+    right:55px;
+   width: 128px;
+   height: 18px;
+}
+
+
+.tickbtn{
+    position: absolute;
+    background-image: url(images/checked.png);
+    width: 24px;
+    height: 24px;
+    background-size: cover;
+    top: 121px;
+    right: 24px;
+    cursor: pointer;
+}
+
+.table{
+    position: absolute;
+    top: 160px;
+    right: 57px;
+    width:(227px);
+    height: 115px;
+    /* background-color: red; */
+    overflow: hidden;
+}
+.table:hover{
+    position: absolute;
+    overflow-y: scroll;  
+    right: 40.2px;
+}
+
+table{
+    border: collapse;
+    /* overflow: auto; */
+    /* border: 1px solid black; */
+}
+td,tr{
+    border: 1px solid black;
+    overflow: hidden;
+    height: 24px;;
+    width:96px; /* 24 left for the cross btn*/
+}
+.del{
+    width: 25px;
+    height: 24px;
+    cursor: pointer;
+    background-image: url(images/remove.png);
+
+    background-size: cover;
+    border: none;
+}
