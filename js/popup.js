@@ -1,7 +1,6 @@
 // getting the user input in form of an object
 
-
-function show(){
+function show() {
     let obj = localStorage.getItem("tasks");
 
     if (obj != null) {
@@ -17,41 +16,58 @@ function show(){
         <tr>
         <td>${element.time}</td>
         <td>${element.task}</td>
-        <td class="del"></td>
+        <td class="del" id="${index}" onclick="deletetask(this.id)" "></td>
         </tr>`;
 
     })
-    if(html==""){ html=`<h2> Come On! Mate, Add some Tasks</h2>`;
-    document.querySelector(".table").style.visibility = "hidden";
-}
+    
     document.getElementById("tasktable").innerHTML = html;
 }
 
+function deletetask(index){
+    let obj = localStorage.getItem("tasks");
 
+    if (obj != null) {
+        obj = JSON.parse(obj);
+    }
+    else {
+        obj = [];
+    }
+    obj.splice(index, 1);
+    localStorage.setItem("tasks", JSON.stringify(obj));
+    show();
+
+}
 
 
 tickbtn = document.querySelector(".tickbtn");
-tickbtn.addEventListener('click',()=>{
+tickbtn.addEventListener('click', () => {
 
     let obj = JSON.parse(localStorage.getItem("tasks"));
     if (obj == null) { obj = []; }
-    // console.log(document.getElementById("inputtime").value);
+
     obj.push({
         "time": document.getElementById("inputtime").value,
         "task": document.getElementById("inputtext").value,
     })
-    localStorage.setItem("tasks", JSON.stringify(obj));
-    // show();
-    document.getElementById("inputtime").value=null;
-    document.getElementById("inputtext").value= "";
+    if ((document.getElementById("inputtext").value != "")&&
+                (document.getElementById("inputtime").value)) {
+
+        localStorage.setItem("tasks", JSON.stringify(obj));
+        document.getElementById("inputtime").value = null;
+        document.getElementById("inputtext").value = "";
+    }else{
+        document.querySelector("#inputtime").style.border = "2px solid red";
+        document.querySelector("#inputtext").style.border = "2px solid red";
+        setTimeout(() => {
+            document.querySelector("#inputtime").style.border = "2px solid black";
+            document.querySelector("#inputtext").style.border = "2px solid black";
+        }, 2000);
+        
+    }
+    
     show();
-        // document.querySelector(".linkinput").style.border = "2px solid red";
-        // document.querySelector(".timeinput").style.border = "2px solid red";
-        // setTimeout(() => {
-        //     document.querySelector(".linkinput").style.border = "2px solid black";
-        //     document.querySelector(".timeinput").style.border = "2px solid black";
-        // }, 2000);
-   })
+})
 
 
 

@@ -31,6 +31,10 @@
     top:100px;
     right:195px;
     font-size:40px;
+    
+}
+#inputtime{
+    border: 2px solid black;
 }
 
 #inputtext{
@@ -39,6 +43,7 @@
     right:55px;
    width: 128px;
    height: 18px;
+   border: 2px solid black;
 }
 
 
@@ -52,7 +57,9 @@
     right: 24px;
     cursor: pointer;
 }
-
+.tickbtn:hover{
+    opacity: 0.5;
+}
 .table{
     position: absolute;
     top: 160px;
