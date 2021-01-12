@@ -95,3 +95,6 @@ td,tr{
     background-size: cover;
     border: none;
 }
+.del:hover{
+    opacity: 0.5;
+}
