@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "Task Reminder",
+    "description": "Task Reminder With Notification _abx",
+    "version": "1.0",
+    "content_scripts": [
+        {
+            "js": [
+                "js/script.js"
+            ],
+            "matches": [
+                "<all_urls>"
+                
+            ]
+        }
+    ],
+    "permissions": [
+        "storage"
+    ],
+    "icons" : {"192" : "images/taskreminder.png"},
+    "browser_action": {
+        "default_icon": "images/taskreminder.png",
+        "default_popup": "index.html"
+    }
+}

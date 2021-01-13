@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Rhodium+Libre&display=swap');
+body{
+    margin: 0px 0px;
 
+}
 .container{
-    position: absolute;
+    position: relative;
     background-image: url("images/yellowbackground.png") ;
     width: 550px;
     height: 300px;

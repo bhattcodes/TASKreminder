@@ -1,4 +1,6 @@
 // getting the user input in form of an object
+console.log("here in app");
+
 
 function show() {
     let obj = localStorage.getItem("tasks");
@@ -16,15 +18,31 @@ function show() {
         <tr>
         <td>${element.time}</td>
         <td>${element.task}</td>
-        <td class="del" id="${index}" onclick="deletetask(this.id)" "></td>
+        <td class="del" id="${index}" "></td>
         </tr>`;
 
     })
-    
+
     document.getElementById("tasktable").innerHTML = html;
 }
 
-function deletetask(index){
+function xyz() {
+    let i;
+    for (i = 0; i < document.getElementsByClassName("del").length; i++) {
+
+        document.getElementsByClassName(".del")[i].addEventListener('click', () => {
+            console.log("here! in deletetask", document.getElementsByClassName(".del")[i].getAttribute("id"));
+            // console.log(xt.getAttribute("id"));
+            // deletetask(xt.getAttribute("id"));
+
+        })
+
+    }
+
+}
+
+
+function deletetask(index) {
     let obj = localStorage.getItem("tasks");
 
     if (obj != null) {
@@ -40,7 +58,7 @@ function deletetask(index){
 }
 
 
-tickbtn = document.querySelector(".tickbtn");
+let tickbtn = document.querySelector(".tickbtn");
 tickbtn.addEventListener('click', () => {
 
     let obj = JSON.parse(localStorage.getItem("tasks"));
@@ -50,23 +68,23 @@ tickbtn.addEventListener('click', () => {
         "time": document.getElementById("inputtime").value,
         "task": document.getElementById("inputtext").value,
     })
-    if ((document.getElementById("inputtext").value != "")&&
-                (document.getElementById("inputtime").value)) {
+    if ((document.getElementById("inputtext").value != "") &&
+        (document.getElementById("inputtime").value)) {
 
         localStorage.setItem("tasks", JSON.stringify(obj));
         document.getElementById("inputtime").value = null;
         document.getElementById("inputtext").value = "";
-    }else{
+    } else {
         document.querySelector("#inputtime").style.border = "2px solid red";
         document.querySelector("#inputtext").style.border = "2px solid red";
         setTimeout(() => {
             document.querySelector("#inputtime").style.border = "2px solid black";
             document.querySelector("#inputtext").style.border = "2px solid black";
         }, 2000);
-        
+
     }
-    
-    show();
+
+    show(); xyz();
 })
 
 
