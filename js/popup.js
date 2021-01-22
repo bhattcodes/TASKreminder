@@ -1,6 +1,6 @@
 console.log("here in app");
 
-// fetch the data from local storage n show in the UO
+// fetch the data from local storage n show in the UI
 function show() {
     let obj = localStorage.getItem("tasks");
 
